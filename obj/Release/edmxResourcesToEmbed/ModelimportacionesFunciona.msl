@@ -16,5 +16,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SalidaImportacion">
+      <EntityTypeMapping TypeName="DBFuncionImportacionesModel.SalidaImportacion">
+        <MappingFragment StoreEntitySet="SalidaImportacion">
+          <ScalarProperty Name="CantidadCompra" ColumnName="CantidadCompra" />
+          <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+          <ScalarProperty Name="CodigoCliente" ColumnName="CodigoCliente" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

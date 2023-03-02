@@ -14,7 +14,18 @@
     <Property Name="CantidadImportada" Type="numeric" Precision="38" Scale="0" />
     <Property Name="CantidadRecibida" Type="numeric" Precision="38" Scale="0" />
   </EntityType>
+  <EntityType Name="SalidaImportacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoCliente" Type="varchar" MaxLength="100" />
+    <Property Name="NombreCliente" Type="varchar" MaxLength="100" />
+    <Property Name="NumeroFactura" Type="varchar" MaxLength="100" />
+    <Property Name="CantidadCompra" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityContainer Name="DBFuncionImportacionesModelStoreContainer">
     <EntitySet Name="EntradaImportacion" EntityType="Self.EntradaImportacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalidaImportacion" EntityType="Self.SalidaImportacion" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -26,5 +26,6 @@ namespace Proyectoimportaciones_v1
         }
     
         public virtual DbSet<EntradaImportacion> EntradaImportacion { get; set; }
+        public virtual DbSet<SalidaImportacion> SalidaImportacion { get; set; }
     }
 }
