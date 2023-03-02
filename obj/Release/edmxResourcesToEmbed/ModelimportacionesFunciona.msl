@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBFuncionImportacionesModelStoreContainer" CdmEntityContainer="DBFuncionImportacionesEntities">
+    <EntitySetMapping Name="EntradaImportacion">
+      <EntityTypeMapping TypeName="DBFuncionImportacionesModel.EntradaImportacion">
+        <MappingFragment StoreEntitySet="EntradaImportacion">
+          <ScalarProperty Name="CantidadRecibida" ColumnName="CantidadRecibida" />
+          <ScalarProperty Name="CantidadImportada" ColumnName="CantidadImportada" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+          <ScalarProperty Name="FechaImportacion" ColumnName="FechaImportacion" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+          <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
+          <ScalarProperty Name="NumeroImportacion" ColumnName="NumeroImportacion" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
