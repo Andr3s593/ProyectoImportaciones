@@ -33,8 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,17 +56,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntradaImportacion.cs">
+      <DependentUpon>ModelImportacionesFunciona.tt</DependentUpon>
+    </Compile>
     <Compile Include="Importaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Importaciones.Designer.cs">
       <DependentUpon>Importaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportacionesCRUD.cs" />
     <Compile Include="ImportacionesEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ImportacionesEntradas.Designer.cs">
       <DependentUpon>ImportacionesEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportacionesSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportacionesSalidas.Designer.cs">
+      <DependentUpon>ImportacionesSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelImportacionesFunciona.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelImportacionesFunciona.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelImportacionesFunciona.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelImportacionesFunciona.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelImportacionesFunciona.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelImportacionesFunciona.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImportacionesEntradas.resx">
       <DependentUpon>ImportacionesEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportacionesSalidas.resx">
+      <DependentUpon>ImportacionesSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +113,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="ModelImportacionesFunciona.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelImportacionesFunciona.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelImportacionesFunciona.edmx.diagram">
+      <DependentUpon>ModelImportacionesFunciona.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +133,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelImportacionesFunciona.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelImportacionesFunciona.edmx</DependentUpon>
+      <LastGenOutput>ModelImportacionesFunciona.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelImportacionesFunciona.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelImportacionesFunciona.edmx</DependentUpon>
+      <LastGenOutput>ModelImportacionesFunciona.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salidas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,9 @@ namespace Proyectoimportaciones_v1
 
         private void mnuImportacionesSalidas_Click(object sender, EventArgs e)
         {
-
+            ImportacionesSalidas importacionessalidas = new ImportacionesSalidas();
+            importacionessalidas.MdiParent = this;
+            importacionessalidas.Show();
         }
     }
 }
