@@ -27,5 +27,7 @@
     <Property Name="NombreCliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="NumeroFactura" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="CantidadCompra" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroImportacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FechaSalidaImportacion" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

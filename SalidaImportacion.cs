@@ -19,5 +19,7 @@ namespace Proyectoimportaciones_v1
         public string NombreCliente { get; set; }
         public string NumeroFactura { get; set; }
         public string CantidadCompra { get; set; }
+        public string NumeroImportacion { get; set; }
+        public Nullable<System.DateTime> FechaSalidaImportacion { get; set; }
     }
 }
