@@ -5,7 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="94417cf06c9d472d8d2f7a278806b3a4" Name="Diagram1">
-        <EntityTypeShape EntityType="DBFuncionImportacionesModel.EntradaImportacion" Width="1.5" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="DBFuncionImportacionesModel.EntradaImportacion" Width="1.75" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="DBFuncionImportacionesModel.SalidaImportacion" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

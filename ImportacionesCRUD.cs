@@ -18,6 +18,7 @@ namespace Proyectoimportaciones_v1
             entradaImportacion.NombreProducto = imprtEntr.NombreProducto;
             entradaImportacion.FechaImportacion = DateTime.Now;
             entradaImportacion.Proveedor = imprtEntr.Proveedor;
+            entradaImportacion.Lote = imprtEntr.Lote;
             entradaImportacion.CantidadImportada = imprtEntr.CantidadImportada;
             entradaImportacion.CantidadRecibida = imprtEntr.CantidadRecibida;
 
@@ -25,6 +26,20 @@ namespace Proyectoimportaciones_v1
             dbfuncionaimportacionesEntities.Entry(entradaImportacion).State = EntityState.Added;
             dbfuncionaimportacionesEntities.SaveChanges();
 
+        }
+
+        public static void RegistroImportacionesSalidas(SalidaImportacion imprtEntr)
+        {
+            DBFuncionImportacionesEntities dbfuncionaimportacionesEntities = new DBFuncionImportacionesEntities();
+            SalidaImportacion salidaImportacion = new SalidaImportacion();
+            salidaImportacion.CodigoCliente = imprtEntr.CodigoCliente;
+            salidaImportacion.NombreCliente = imprtEntr.NombreCliente;
+            salidaImportacion.NumeroFactura = imprtEntr.NumeroFactura;
+            salidaImportacion.CantidadCompra = imprtEntr.CantidadCompra;
+
+            dbfuncionaimportacionesEntities.SalidaImportacion.Add(salidaImportacion);
+            dbfuncionaimportacionesEntities.Entry(salidaImportacion).State = EntityState.Added;
+            dbfuncionaimportacionesEntities.SaveChanges();
         }
     }
 }

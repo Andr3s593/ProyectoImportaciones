@@ -95,6 +95,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalidaImportacion.cs">
+      <DependentUpon>ModelImportacionesFunciona.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Importaciones.resx">
       <DependentUpon>Importaciones.cs</DependentUpon>
     </EmbeddedResource>

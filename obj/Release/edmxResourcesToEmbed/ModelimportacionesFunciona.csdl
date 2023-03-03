@@ -2,6 +2,7 @@
 <Schema Namespace="DBFuncionImportacionesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DBFuncionImportacionesEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="EntradaImportacion" EntityType="DBFuncionImportacionesModel.EntradaImportacion" />
+    <EntitySet Name="SalidaImportacion" EntityType="DBFuncionImportacionesModel.SalidaImportacion" />
   </EntityContainer>
   <EntityType Name="EntradaImportacion">
     <Key>
@@ -16,5 +17,15 @@
     <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="CantidadImportada" Type="Decimal" Precision="38" Scale="0" />
     <Property Name="CantidadRecibida" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="SalidaImportacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoCliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NombreCliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroFactura" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CantidadCompra" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
