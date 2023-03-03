@@ -19,6 +19,8 @@
     <EntitySetMapping Name="SalidaImportacion">
       <EntityTypeMapping TypeName="DBFuncionImportacionesModel.SalidaImportacion">
         <MappingFragment StoreEntitySet="SalidaImportacion">
+          <ScalarProperty Name="FechaSalidaImportacion" ColumnName="FechaSalidaImportacion" />
+          <ScalarProperty Name="NumeroImportacion" ColumnName="NumeroImportacion" />
           <ScalarProperty Name="CantidadCompra" ColumnName="CantidadCompra" />
           <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
           <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />

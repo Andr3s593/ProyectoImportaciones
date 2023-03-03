@@ -23,6 +23,8 @@
     <Property Name="NombreCliente" Type="varchar" MaxLength="100" />
     <Property Name="NumeroFactura" Type="varchar" MaxLength="100" />
     <Property Name="CantidadCompra" Type="varchar" MaxLength="100" />
+    <Property Name="NumeroImportacion" Type="varchar" MaxLength="100" />
+    <Property Name="FechaSalidaImportacion" Type="datetime" />
   </EntityType>
   <EntityContainer Name="DBFuncionImportacionesModelStoreContainer">
     <EntitySet Name="EntradaImportacion" EntityType="Self.EntradaImportacion" Schema="dbo" store:Type="Tables" />

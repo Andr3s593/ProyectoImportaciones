@@ -28,6 +28,8 @@
           <Property Name="NombreCliente" Type="varchar" MaxLength="100" />
           <Property Name="NumeroFactura" Type="varchar" MaxLength="100" />
           <Property Name="CantidadCompra" Type="varchar" MaxLength="100" />
+          <Property Name="NumeroImportacion" Type="varchar" MaxLength="100" />
+          <Property Name="FechaSalidaImportacion" Type="datetime" />
         </EntityType>
         <EntityContainer Name="DBFuncionImportacionesModelStoreContainer">
           <EntitySet Name="EntradaImportacion" EntityType="Self.EntradaImportacion" Schema="dbo" store:Type="Tables" />
@@ -64,6 +66,8 @@
           <Property Name="NombreCliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="NumeroFactura" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CantidadCompra" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroImportacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaSalidaImportacion" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -89,6 +93,8 @@
           <EntitySetMapping Name="SalidaImportacion">
             <EntityTypeMapping TypeName="DBFuncionImportacionesModel.SalidaImportacion">
               <MappingFragment StoreEntitySet="SalidaImportacion">
+                <ScalarProperty Name="FechaSalidaImportacion" ColumnName="FechaSalidaImportacion" />
+                <ScalarProperty Name="NumeroImportacion" ColumnName="NumeroImportacion" />
                 <ScalarProperty Name="CantidadCompra" ColumnName="CantidadCompra" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
                 <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
