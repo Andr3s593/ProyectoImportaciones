@@ -8,7 +8,7 @@
     <Property Name="NumeroImportacion" Type="varchar" MaxLength="100" />
     <Property Name="CodigoProducto" Type="varchar" MaxLength="100" />
     <Property Name="NombreProducto" Type="varchar" MaxLength="100" />
-    <Property Name="Lote" Type="varchar" MaxLength="100" />
+    <Property Name="Lote" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="FechaImportacion" Type="datetime" />
     <Property Name="Proveedor" Type="varchar" MaxLength="100" />
     <Property Name="CantidadImportada" Type="numeric" Precision="38" Scale="0" />

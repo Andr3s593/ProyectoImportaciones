@@ -18,13 +18,13 @@ namespace Proyectoimportaciones_v1
             entradaImportacion.NombreProducto = imprtEntr.NombreProducto;
             entradaImportacion.FechaImportacion = DateTime.Now;
             entradaImportacion.Proveedor = imprtEntr.Proveedor;
+            entradaImportacion.Lote = imprtEntr.Lote;
             entradaImportacion.CantidadImportada = imprtEntr.CantidadImportada;
             entradaImportacion.CantidadRecibida = imprtEntr.CantidadRecibida;
 
             dbfuncionaimportacionesEntities.EntradaImportacion.Add(entradaImportacion);
             dbfuncionaimportacionesEntities.Entry(entradaImportacion).State = EntityState.Added;
             dbfuncionaimportacionesEntities.SaveChanges();
-
         }
     }
 }

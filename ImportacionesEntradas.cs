@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace Proyectoimportaciones_v1
             entradaImportacion.NumeroImportacion = txtNumerodeImportacion.Text;
             entradaImportacion.CodigoProducto = txtCodigoProducto.Text;
             entradaImportacion.NombreProducto = txtNombreProducto.Text;
-            entradaImportacion.Lote = txtLote.Text;
+            entradaImportacion.Lote = txtLoteEntradaImportacion.Text;
             entradaImportacion.Proveedor = cmbProveedor.SelectedItem.ToString();
             int cantidadImportada;
             if (Int32.TryParse(txtCantidadImportada.Text, out cantidadImportada))
@@ -54,5 +55,14 @@ namespace Proyectoimportaciones_v1
             // Muestra un mensaje de éxito
             MessageBox.Show("Los datos se han guardado correctamente.");
         }
+        //SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=BDFuncionImportaciones;User ID=DESKTOP-RMFGQNF;Password=Andres12345678;\r\n");
+        /*private void dtgImportacionesEntradas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string consulta = "select * from dbo.EntradaImmportes";
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion); 
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            dtgImportacionesEntradas.DataSource = dt;
+        }*/
     }
 }
