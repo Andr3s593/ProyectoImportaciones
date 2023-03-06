@@ -34,3 +34,21 @@ C:\Users\pc\Downloads\salidas\ProyectoImportaciones\obj\Release\Proyectoimportac
 C:\Users\pc\Downloads\salidas\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.exe
 C:\Users\pc\Downloads\salidas\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.pdb
 C:\Users\pc\Downloads\salidas\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.ImportacionesSalidas.resources
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\bin\Release\Proyectoimportaciones_v1.exe.config
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\bin\Release\Proyectoimportaciones_v1.exe
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\bin\Release\Proyectoimportaciones_v1.pdb
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\bin\Release\EntityFramework.dll
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\bin\Release\EntityFramework.xml
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.csproj.AssemblyReference.cache
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.csproj.SuggestedBindingRedirects.cache
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.Importaciones.resources
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.ImportacionesSalidas.resources
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.Properties.Resources.resources
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.csproj.GenerateResource.cache
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.csproj.CoreCompileInputs.cache
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.csproj.CopyComplete
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.exe
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.pdb
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.ImportacionesES.resources

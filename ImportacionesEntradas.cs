@@ -12,11 +12,12 @@ using Proyectoimportaciones_v1;
 
 namespace Proyectoimportaciones_v1
 {
-    public partial class ImportacionesEntradas : Form
+    public partial class ImportacionesES : Form
     {
-        public ImportacionesEntradas()
+        public ImportacionesES()
         {
             InitializeComponent();
+            Obtener();
         }
         private void btnExportarImportacionesEntradas_Click(object sender, EventArgs e)
         {
@@ -53,6 +54,13 @@ namespace Proyectoimportaciones_v1
 
             // Muestra un mensaje de éxito
             MessageBox.Show("Los datos se han guardado correctamente.");
+            Obtener();
+        }
+        private void Obtener()
+        {
+            DBFuncionImportacionesEntities dbfuncionaimportacionesEntities = new DBFuncionImportacionesEntities(); //entity framework
+            var importacionesentradas = dbfuncionaimportacionesEntities.EntradaImportacion.ToList(); //referencia al objeto
+            dtgImportacionesEntradas.DataSource = importacionesentradas; //cargar el grid
         }
     }
 }

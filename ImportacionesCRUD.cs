@@ -36,6 +36,9 @@ namespace Proyectoimportaciones_v1
             salidaImportacion.NombreCliente = imprtEntr.NombreCliente;
             salidaImportacion.NumeroFactura = imprtEntr.NumeroFactura;
             salidaImportacion.CantidadCompra = imprtEntr.CantidadCompra;
+            salidaImportacion.NumeroImportacion = imprtEntr.NumeroImportacion;
+            salidaImportacion.FechaSalidaImportacion = DateTime.Now;
+
 
             dbfuncionaimportacionesEntities.SalidaImportacion.Add(salidaImportacion);
             dbfuncionaimportacionesEntities.Entry(salidaImportacion).State = EntityState.Added;

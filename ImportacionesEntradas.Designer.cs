@@ -1,6 +1,6 @@
 ﻿namespace Proyectoimportaciones_v1
 {
-    partial class ImportacionesEntradas
+    partial class ImportacionesES
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,12 @@
             this.lblFechaImportacion = new System.Windows.Forms.Label();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
-            this.gbImportacionesEntradas = new System.Windows.Forms.GroupBox();
+            this.gbImportacionesE = new System.Windows.Forms.GroupBox();
+            this.ExportarExcel = new System.Windows.Forms.Button();
+            this.txtCantidadRecibida = new System.Windows.Forms.TextBox();
+            this.txtCantidadImportada = new System.Windows.Forms.TextBox();
             this.lblCantidadRecibida = new System.Windows.Forms.Label();
-            this.btnExportarImportacionesEntradas = new System.Windows.Forms.Button();
+            this.btnGuardarImportacion = new System.Windows.Forms.Button();
             this.btnActualizarRegistroEntradas = new System.Windows.Forms.Button();
             this.lblCantidadImportada = new System.Windows.Forms.Label();
             this.txtLote = new System.Windows.Forms.TextBox();
@@ -47,9 +50,7 @@
             this.txtNumerodeImportacion = new System.Windows.Forms.TextBox();
             this.lblNumerodeImportacion = new System.Windows.Forms.Label();
             this.dtgImportacionesEntradas = new System.Windows.Forms.DataGridView();
-            this.txtCantidadImportada = new System.Windows.Forms.TextBox();
-            this.txtCantidadRecibida = new System.Windows.Forms.TextBox();
-            this.gbImportacionesEntradas.SuspendLayout();
+            this.gbImportacionesE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgImportacionesEntradas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,9 +63,9 @@
             this.lblImportacionesTItle.ForeColor = System.Drawing.Color.Navy;
             this.lblImportacionesTItle.Location = new System.Drawing.Point(6, 28);
             this.lblImportacionesTItle.Name = "lblImportacionesTItle";
-            this.lblImportacionesTItle.Size = new System.Drawing.Size(229, 24);
+            this.lblImportacionesTItle.Size = new System.Drawing.Size(147, 24);
             this.lblImportacionesTItle.TabIndex = 0;
-            this.lblImportacionesTItle.Text = "Importaciones Entradas";
+            this.lblImportacionesTItle.Text = "Importaciones ";
             // 
             // dtFechaImportacion
             // 
@@ -110,34 +111,58 @@
             this.cmbProveedor.TabIndex = 4;
             this.cmbProveedor.Text = "-- Seleccione --";
             // 
-            // gbImportacionesEntradas
+            // gbImportacionesE
             // 
-            this.gbImportacionesEntradas.Controls.Add(this.txtCantidadRecibida);
-            this.gbImportacionesEntradas.Controls.Add(this.txtCantidadImportada);
-            this.gbImportacionesEntradas.Controls.Add(this.lblCantidadRecibida);
-            this.gbImportacionesEntradas.Controls.Add(this.btnExportarImportacionesEntradas);
-            this.gbImportacionesEntradas.Controls.Add(this.btnActualizarRegistroEntradas);
-            this.gbImportacionesEntradas.Controls.Add(this.lblCantidadImportada);
-            this.gbImportacionesEntradas.Controls.Add(this.txtLote);
-            this.gbImportacionesEntradas.Controls.Add(this.lblLote);
-            this.gbImportacionesEntradas.Controls.Add(this.txtNombreProducto);
-            this.gbImportacionesEntradas.Controls.Add(this.lblNombreProducto);
-            this.gbImportacionesEntradas.Controls.Add(this.txtCodigoProducto);
-            this.gbImportacionesEntradas.Controls.Add(this.lblCodigoProducto);
-            this.gbImportacionesEntradas.Controls.Add(this.txtNumerodeImportacion);
-            this.gbImportacionesEntradas.Controls.Add(this.lblNumerodeImportacion);
-            this.gbImportacionesEntradas.Controls.Add(this.dtgImportacionesEntradas);
-            this.gbImportacionesEntradas.Controls.Add(this.dtFechaImportacion);
-            this.gbImportacionesEntradas.Controls.Add(this.cmbProveedor);
-            this.gbImportacionesEntradas.Controls.Add(this.lblImportacionesTItle);
-            this.gbImportacionesEntradas.Controls.Add(this.lblProveedor);
-            this.gbImportacionesEntradas.Controls.Add(this.lblFechaImportacion);
-            this.gbImportacionesEntradas.Location = new System.Drawing.Point(13, 9);
-            this.gbImportacionesEntradas.Name = "gbImportacionesEntradas";
-            this.gbImportacionesEntradas.Size = new System.Drawing.Size(872, 496);
-            this.gbImportacionesEntradas.TabIndex = 5;
-            this.gbImportacionesEntradas.TabStop = false;
-            this.gbImportacionesEntradas.Text = "Importaciones Entradas";
+            this.gbImportacionesE.Controls.Add(this.ExportarExcel);
+            this.gbImportacionesE.Controls.Add(this.txtCantidadRecibida);
+            this.gbImportacionesE.Controls.Add(this.txtCantidadImportada);
+            this.gbImportacionesE.Controls.Add(this.lblCantidadRecibida);
+            this.gbImportacionesE.Controls.Add(this.btnGuardarImportacion);
+            this.gbImportacionesE.Controls.Add(this.btnActualizarRegistroEntradas);
+            this.gbImportacionesE.Controls.Add(this.lblCantidadImportada);
+            this.gbImportacionesE.Controls.Add(this.txtLote);
+            this.gbImportacionesE.Controls.Add(this.lblLote);
+            this.gbImportacionesE.Controls.Add(this.txtNombreProducto);
+            this.gbImportacionesE.Controls.Add(this.lblNombreProducto);
+            this.gbImportacionesE.Controls.Add(this.txtCodigoProducto);
+            this.gbImportacionesE.Controls.Add(this.lblCodigoProducto);
+            this.gbImportacionesE.Controls.Add(this.txtNumerodeImportacion);
+            this.gbImportacionesE.Controls.Add(this.lblNumerodeImportacion);
+            this.gbImportacionesE.Controls.Add(this.dtgImportacionesEntradas);
+            this.gbImportacionesE.Controls.Add(this.dtFechaImportacion);
+            this.gbImportacionesE.Controls.Add(this.cmbProveedor);
+            this.gbImportacionesE.Controls.Add(this.lblImportacionesTItle);
+            this.gbImportacionesE.Controls.Add(this.lblProveedor);
+            this.gbImportacionesE.Controls.Add(this.lblFechaImportacion);
+            this.gbImportacionesE.Location = new System.Drawing.Point(13, 9);
+            this.gbImportacionesE.Name = "gbImportacionesE";
+            this.gbImportacionesE.Size = new System.Drawing.Size(872, 496);
+            this.gbImportacionesE.TabIndex = 5;
+            this.gbImportacionesE.TabStop = false;
+            this.gbImportacionesE.Text = "Importaciones";
+            // 
+            // ExportarExcel
+            // 
+            this.ExportarExcel.Location = new System.Drawing.Point(590, 467);
+            this.ExportarExcel.Name = "ExportarExcel";
+            this.ExportarExcel.Size = new System.Drawing.Size(100, 23);
+            this.ExportarExcel.TabIndex = 20;
+            this.ExportarExcel.Text = "Exportar a Excel";
+            this.ExportarExcel.UseVisualStyleBackColor = true;
+            // 
+            // txtCantidadRecibida
+            // 
+            this.txtCantidadRecibida.Location = new System.Drawing.Point(806, 422);
+            this.txtCantidadRecibida.Name = "txtCantidadRecibida";
+            this.txtCantidadRecibida.Size = new System.Drawing.Size(60, 20);
+            this.txtCantidadRecibida.TabIndex = 19;
+            // 
+            // txtCantidadImportada
+            // 
+            this.txtCantidadImportada.Location = new System.Drawing.Point(641, 422);
+            this.txtCantidadImportada.Name = "txtCantidadImportada";
+            this.txtCantidadImportada.Size = new System.Drawing.Size(60, 20);
+            this.txtCantidadImportada.TabIndex = 18;
             // 
             // lblCantidadRecibida
             // 
@@ -149,19 +174,19 @@
             this.lblCantidadRecibida.TabIndex = 17;
             this.lblCantidadRecibida.Text = "Cantidad Recibida:";
             // 
-            // btnExportarImportacionesEntradas
+            // btnGuardarImportacion
             // 
-            this.btnExportarImportacionesEntradas.Location = new System.Drawing.Point(451, 467);
-            this.btnExportarImportacionesEntradas.Name = "btnExportarImportacionesEntradas";
-            this.btnExportarImportacionesEntradas.Size = new System.Drawing.Size(120, 23);
-            this.btnExportarImportacionesEntradas.TabIndex = 16;
-            this.btnExportarImportacionesEntradas.Text = "Exportar";
-            this.btnExportarImportacionesEntradas.UseVisualStyleBackColor = true;
-            this.btnExportarImportacionesEntradas.Click += new System.EventHandler(this.btnExportarImportacionesEntradas_Click);
+            this.btnGuardarImportacion.Location = new System.Drawing.Point(397, 467);
+            this.btnGuardarImportacion.Name = "btnGuardarImportacion";
+            this.btnGuardarImportacion.Size = new System.Drawing.Size(120, 23);
+            this.btnGuardarImportacion.TabIndex = 16;
+            this.btnGuardarImportacion.Text = "Guardar";
+            this.btnGuardarImportacion.UseVisualStyleBackColor = true;
+            this.btnGuardarImportacion.Click += new System.EventHandler(this.btnExportarImportacionesEntradas_Click);
             // 
             // btnActualizarRegistroEntradas
             // 
-            this.btnActualizarRegistroEntradas.Location = new System.Drawing.Point(283, 467);
+            this.btnActualizarRegistroEntradas.Location = new System.Drawing.Point(206, 467);
             this.btnActualizarRegistroEntradas.Name = "btnActualizarRegistroEntradas";
             this.btnActualizarRegistroEntradas.Size = new System.Drawing.Size(120, 23);
             this.btnActualizarRegistroEntradas.TabIndex = 15;
@@ -254,33 +279,19 @@
             this.dtgImportacionesEntradas.Size = new System.Drawing.Size(860, 292);
             this.dtgImportacionesEntradas.TabIndex = 5;
             // 
-            // txtCantidadImportada
-            // 
-            this.txtCantidadImportada.Location = new System.Drawing.Point(641, 422);
-            this.txtCantidadImportada.Name = "txtCantidadImportada";
-            this.txtCantidadImportada.Size = new System.Drawing.Size(60, 20);
-            this.txtCantidadImportada.TabIndex = 18;
-            // 
-            // txtCantidadRecibida
-            // 
-            this.txtCantidadRecibida.Location = new System.Drawing.Point(806, 422);
-            this.txtCantidadRecibida.Name = "txtCantidadRecibida";
-            this.txtCantidadRecibida.Size = new System.Drawing.Size(60, 20);
-            this.txtCantidadRecibida.TabIndex = 19;
-            // 
-            // ImportacionesEntradas
+            // ImportacionesES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(897, 517);
-            this.Controls.Add(this.gbImportacionesEntradas);
-            this.Name = "ImportacionesEntradas";
+            this.Controls.Add(this.gbImportacionesE);
+            this.Name = "ImportacionesES";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImportacionesEntradas";
-            this.gbImportacionesEntradas.ResumeLayout(false);
-            this.gbImportacionesEntradas.PerformLayout();
+            this.gbImportacionesE.ResumeLayout(false);
+            this.gbImportacionesE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgImportacionesEntradas)).EndInit();
             this.ResumeLayout(false);
 
@@ -293,7 +304,7 @@
         private System.Windows.Forms.Label lblFechaImportacion;
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.ComboBox cmbProveedor;
-        private System.Windows.Forms.GroupBox gbImportacionesEntradas;
+        private System.Windows.Forms.GroupBox gbImportacionesE;
         private System.Windows.Forms.Label lblNumerodeImportacion;
         private System.Windows.Forms.DataGridView dtgImportacionesEntradas;
         private System.Windows.Forms.TextBox txtNombreProducto;
@@ -305,9 +316,10 @@
         private System.Windows.Forms.TextBox txtLote;
         private System.Windows.Forms.Label lblCantidadImportada;
         private System.Windows.Forms.Button btnActualizarRegistroEntradas;
-        private System.Windows.Forms.Button btnExportarImportacionesEntradas;
+        private System.Windows.Forms.Button btnGuardarImportacion;
         private System.Windows.Forms.Label lblCantidadRecibida;
         private System.Windows.Forms.TextBox txtCantidadRecibida;
         private System.Windows.Forms.TextBox txtCantidadImportada;
+        private System.Windows.Forms.Button ExportarExcel;
     }
 }

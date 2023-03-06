@@ -20,6 +20,8 @@ namespace Proyectoimportaciones_v1
         public ImportacionesSalidas()
         {
             InitializeComponent();
+            Obtener();
+            CargarCombo();
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -27,54 +29,34 @@ namespace Proyectoimportaciones_v1
             SalidaImportacion salidaImportacion = new SalidaImportacion();
             salidaImportacion.CodigoCliente = txtCodigoCliente.Text;
             salidaImportacion.NombreCliente = txtNombreCliente.Text;
-            salidaImportacion.NumeroFactura = txtCantidadComprar.Text;            
-            salidaImportacion.CantidadCompra = txtCantidadComprar.Text;           
+            salidaImportacion.NumeroFactura = txtCantidadComprar.Text;
+            salidaImportacion.CantidadCompra = txtCantidadComprar.Text;
+            salidaImportacion.NumeroImportacion = txtCantidadComprar.Text;
+            
 
             ImportacionesCRUD.RegistroImportacionesSalidas(salidaImportacion);
 
             //this.dgRegistroSalidas.DataSource = consultaImportaciones();
 
             MessageBox.Show("Los datos se guardaron correctamente.");
-            
+            Obtener();
         }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private void Obtener()
         {
-           
-            
+            DBFuncionImportacionesEntities dbFuncionImportacionesEntities = new DBFuncionImportacionesEntities();
+            var entradaes = dbFuncionImportacionesEntities.SalidaImportacion.ToList();
+            this.dgRegistroSalidas.DataSource = entradaes;
         }
 
-        
-        private void ImportacionesSalidas_Load(object sender, EventArgs e)
+        private void CargarCombo()
         {
-            // Crear conexión a la base de datos
-            SqlConnection con = new SqlConnection("data source=DESKTOP-BI1QIIS\\SQLEXPRESS;initial catalog=DBFuncionImportaciones;integrated security=True;MultipleActiveResultSets=True");
-            // Abrir la conexión
-            con.Open();
-            // Crear la consulta SQL
-            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.SalidaImportacion", con);
-            // Crear el DataTable y llenarlo con los datos
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            // Asignar la tabla al DataSource del DataGridView
-            dgRegistroSalidas.DataSource = dt;
-            // Cerrar la conexión
-            con.Close();
+            DBFuncionImportacionesEntities dbFuncionImportacionesEntities = new DBFuncionImportacionesEntities();
+            var establecimientoGraficos = dbFuncionImportacionesEntities.EntradaImportacion.ToList();
+            this.cmbNumeroImportacion.DataSource = establecimientoGraficos;
+            cmbNumeroImportacion.DisplayMember = "NumeroImportacion";
+            cmbNumeroImportacion.ValueMember = "id";
         }
 
-
-        private void dgRegistroSalidas_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            txtCodigoCliente.Text = dgRegistroSalidas.SelectedCells[0].Value.ToString();
-            txtCodigoCliente.Text = dgRegistroSalidas.SelectedCells[1].Value.ToString();
-            txtNombreCliente.Text = dgRegistroSalidas.SelectedCells[2].Value.ToString();
-            txtNumeroFactura.Text = dgRegistroSalidas.SelectedCells[3].Value.ToString();
-            txtCantidadComprar.Text = dgRegistroSalidas.SelectedCells[4].Value.ToString();
-            dtFechaImportacion.Value = DateTime.Parse(dgRegistroSalidas.SelectedCells[5].Value.ToString());
-            cmbNumeroImportacion.SelectedItem = dgRegistroSalidas.SelectedCells[4].Value.ToString();
-
-        }
     }
 }
 

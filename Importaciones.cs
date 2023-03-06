@@ -20,7 +20,7 @@ namespace Proyectoimportaciones_v1
 
         private void mnuImportacionesEntradas_Click(object sender, EventArgs e)
         {
-            ImportacionesEntradas importacionesentradas = new ImportacionesEntradas();
+            ImportacionesES importacionesentradas = new ImportacionesES();
             importacionesentradas.MdiParent = this;
             importacionesentradas.Show();
         }

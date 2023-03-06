@@ -13,7 +13,7 @@
           <Property Name="NumeroImportacion" Type="varchar" MaxLength="100" />
           <Property Name="CodigoProducto" Type="varchar" MaxLength="100" />
           <Property Name="NombreProducto" Type="varchar" MaxLength="100" />
-          <Property Name="Lote" Type="varchar" MaxLength="100" />
+          <Property Name="Lote" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="FechaImportacion" Type="datetime" />
           <Property Name="Proveedor" Type="varchar" MaxLength="100" />
           <Property Name="CantidadImportada" Type="numeric" Precision="38" Scale="0" />
@@ -51,7 +51,7 @@
           <Property Name="NumeroImportacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CodigoProducto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="NombreProducto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Lote" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Lote" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FechaImportacion" Type="DateTime" Precision="3" />
           <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CantidadImportada" Type="Decimal" Precision="38" Scale="0" />
