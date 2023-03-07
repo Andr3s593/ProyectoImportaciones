@@ -39,6 +39,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>.\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -56,7 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntradaImportacion.cs">
+    <Compile Include="EntradasSalidasImportacion.cs">
+      <DependentUpon>ModelImportacionesFunciona.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Importacion.cs">
       <DependentUpon>ModelImportacionesFunciona.tt</DependentUpon>
     </Compile>
     <Compile Include="Importaciones.cs">
@@ -93,9 +99,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelImportacionesFunciona.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>ModelImportacionesFunciona.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalidaImportacion.cs">
+    <Compile Include="ProveedorImportacion.cs">
       <DependentUpon>ModelImportacionesFunciona.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Importaciones.resx">

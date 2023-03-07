@@ -51,15 +51,15 @@
             // importacionesEntradasToolStripMenuItem1
             // 
             this.importacionesEntradasToolStripMenuItem1.Name = "importacionesEntradasToolStripMenuItem1";
-            this.importacionesEntradasToolStripMenuItem1.Size = new System.Drawing.Size(198, 22);
-            this.importacionesEntradasToolStripMenuItem1.Text = "Importaciones Entradas";
+            this.importacionesEntradasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.importacionesEntradasToolStripMenuItem1.Text = "Importaciones";
             this.importacionesEntradasToolStripMenuItem1.Click += new System.EventHandler(this.mnuImportacionesEntradas_Click);
             // 
             // importacionesSalidasToolStripMenuItem
             // 
             this.importacionesSalidasToolStripMenuItem.Name = "importacionesSalidasToolStripMenuItem";
-            this.importacionesSalidasToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.importacionesSalidasToolStripMenuItem.Text = "Importaciones Salidas";
+            this.importacionesSalidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importacionesSalidasToolStripMenuItem.Text = "Movimiento E/S";
             this.importacionesSalidasToolStripMenuItem.Click += new System.EventHandler(this.mnuImportacionesSalidas_Click);
             // 
             // menuStrip1

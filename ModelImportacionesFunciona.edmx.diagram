@@ -5,8 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="94417cf06c9d472d8d2f7a278806b3a4" Name="Diagram1">
-        <EntityTypeShape EntityType="DBFuncionImportacionesModel.EntradaImportacion" Width="1.75" PointX="0.75" PointY="0.5" />
-        <EntityTypeShape EntityType="DBFuncionImportacionesModel.SalidaImportacion" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBFuncionImportacionesModel.Importacion" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="DBFuncionImportacionesModel.Producto" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DBFuncionImportacionesModel.ProveedorImportacion" Width="1.5" PointX="0.75" PointY="1.875" />
+        <AssociationConnector Association="DBFuncionImportacionesModel.FK_EntradaImportacion_Producto" />
+        <AssociationConnector Association="DBFuncionImportacionesModel.FK_EntradaImportacion_ProveedorImportacion" />
+        <EntityTypeShape EntityType="DBFuncionImportacionesModel.EntradasSalidasImportacion" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

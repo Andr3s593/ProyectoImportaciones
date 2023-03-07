@@ -22,7 +22,7 @@ namespace Proyectoimportaciones_v1
         private void btnExportarImportacionesEntradas_Click(object sender, EventArgs e)
         {
             // Crea un objeto de tipo EntradaImportaciones y asigna sus valores
-            EntradaImportacion entradaImportacion = new EntradaImportacion();
+            Importacion entradaImportacion = new Importacion();
             entradaImportacion.NumeroImportacion = txtNumerodeImportacion.Text;
             entradaImportacion.CodigoProducto = txtCodigoProducto.Text;
             entradaImportacion.NombreProducto = txtNombreProducto.Text;
@@ -59,7 +59,7 @@ namespace Proyectoimportaciones_v1
         private void Obtener()
         {
             DBFuncionImportacionesEntities dbfuncionaimportacionesEntities = new DBFuncionImportacionesEntities(); //entity framework
-            var importacionesentradas = dbfuncionaimportacionesEntities.EntradaImportacion.ToList(); //referencia al objeto
+            var importacionesentradas = dbfuncionaimportacionesEntities.Importacion.ToList(); //referencia al objeto
             dtgImportacionesEntradas.DataSource = importacionesentradas; //cargar el grid
         }
     }

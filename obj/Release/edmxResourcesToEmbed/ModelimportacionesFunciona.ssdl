@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DBFuncionImportacionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="EntradaImportacion">
+  <EntityType Name="EntradasSalidasImportacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoCliente" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NombreCliente" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NumeroFactura" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CantidadCompra" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NumeroImportacion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FechaSalidaImportacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Importacion">
     <Key>
       <PropertyRef Name="id" />
     </Key>
@@ -13,21 +25,62 @@
     <Property Name="Proveedor" Type="varchar" MaxLength="100" />
     <Property Name="CantidadImportada" Type="numeric" Precision="38" Scale="0" />
     <Property Name="CantidadRecibida" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="ProveedorImportacionId" Type="int" />
+    <Property Name="ProductoId" Type="int" />
   </EntityType>
-  <EntityType Name="SalidaImportacion">
+  <EntityType Name="Producto">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CodigoCliente" Type="varchar" MaxLength="100" />
-    <Property Name="NombreCliente" Type="varchar" MaxLength="100" />
-    <Property Name="NumeroFactura" Type="varchar" MaxLength="100" />
-    <Property Name="CantidadCompra" Type="varchar" MaxLength="100" />
-    <Property Name="NumeroImportacion" Type="varchar" MaxLength="100" />
-    <Property Name="FechaSalidaImportacion" Type="datetime" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombreProducto" Type="nchar" MaxLength="30" />
+    <Property Name="cantidad" Type="float" />
+    <Property Name="lote" Type="float" />
   </EntityType>
+  <EntityType Name="ProveedorImportacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombreProveedor" Type="nchar" MaxLength="30" />
+    <Property Name="numeroImportacion" Type="nchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_EntradaImportacion_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+    <End Role="Importacion" Type="Self.Importacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Importacion">
+        <PropertyRef Name="ProductoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntradaImportacion_ProveedorImportacion">
+    <End Role="ProveedorImportacion" Type="Self.ProveedorImportacion" Multiplicity="0..1" />
+    <End Role="Importacion" Type="Self.Importacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProveedorImportacion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Importacion">
+        <PropertyRef Name="ProveedorImportacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DBFuncionImportacionesModelStoreContainer">
-    <EntitySet Name="EntradaImportacion" EntityType="Self.EntradaImportacion" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SalidaImportacion" EntityType="Self.SalidaImportacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntradasSalidasImportacion" EntityType="Self.EntradasSalidasImportacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Importacion" EntityType="Self.Importacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProveedorImportacion" EntityType="Self.ProveedorImportacion" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_EntradaImportacion_Producto" Association="Self.FK_EntradaImportacion_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Importacion" EntitySet="Importacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntradaImportacion_ProveedorImportacion" Association="Self.FK_EntradaImportacion_ProveedorImportacion">
+      <End Role="ProveedorImportacion" EntitySet="ProveedorImportacion" />
+      <End Role="Importacion" EntitySet="Importacion" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>
