@@ -39,7 +39,6 @@
             this.txtCantidadImportada = new System.Windows.Forms.TextBox();
             this.lblCantidadRecibida = new System.Windows.Forms.Label();
             this.btnGuardarImportacion = new System.Windows.Forms.Button();
-            this.btnActualizarRegistroEntradas = new System.Windows.Forms.Button();
             this.lblCantidadImportada = new System.Windows.Forms.Label();
             this.txtLote = new System.Windows.Forms.TextBox();
             this.lblLote = new System.Windows.Forms.Label();
@@ -118,7 +117,6 @@
             this.gbImportacionesE.Controls.Add(this.txtCantidadImportada);
             this.gbImportacionesE.Controls.Add(this.lblCantidadRecibida);
             this.gbImportacionesE.Controls.Add(this.btnGuardarImportacion);
-            this.gbImportacionesE.Controls.Add(this.btnActualizarRegistroEntradas);
             this.gbImportacionesE.Controls.Add(this.lblCantidadImportada);
             this.gbImportacionesE.Controls.Add(this.txtLote);
             this.gbImportacionesE.Controls.Add(this.lblLote);
@@ -143,7 +141,7 @@
             // 
             // ExportarExcel
             // 
-            this.ExportarExcel.Location = new System.Drawing.Point(590, 467);
+            this.ExportarExcel.Location = new System.Drawing.Point(494, 467);
             this.ExportarExcel.Name = "ExportarExcel";
             this.ExportarExcel.Size = new System.Drawing.Size(100, 23);
             this.ExportarExcel.TabIndex = 20;
@@ -176,22 +174,13 @@
             // 
             // btnGuardarImportacion
             // 
-            this.btnGuardarImportacion.Location = new System.Drawing.Point(397, 467);
+            this.btnGuardarImportacion.Location = new System.Drawing.Point(282, 467);
             this.btnGuardarImportacion.Name = "btnGuardarImportacion";
             this.btnGuardarImportacion.Size = new System.Drawing.Size(120, 23);
             this.btnGuardarImportacion.TabIndex = 16;
             this.btnGuardarImportacion.Text = "Guardar";
             this.btnGuardarImportacion.UseVisualStyleBackColor = true;
             this.btnGuardarImportacion.Click += new System.EventHandler(this.btnExportarImportacionesEntradas_Click);
-            // 
-            // btnActualizarRegistroEntradas
-            // 
-            this.btnActualizarRegistroEntradas.Location = new System.Drawing.Point(206, 467);
-            this.btnActualizarRegistroEntradas.Name = "btnActualizarRegistroEntradas";
-            this.btnActualizarRegistroEntradas.Size = new System.Drawing.Size(120, 23);
-            this.btnActualizarRegistroEntradas.TabIndex = 15;
-            this.btnActualizarRegistroEntradas.Text = "Actualizar";
-            this.btnActualizarRegistroEntradas.UseVisualStyleBackColor = true;
             // 
             // lblCantidadImportada
             // 
@@ -315,7 +304,6 @@
         private System.Windows.Forms.Label lblLote;
         private System.Windows.Forms.TextBox txtLote;
         private System.Windows.Forms.Label lblCantidadImportada;
-        private System.Windows.Forms.Button btnActualizarRegistroEntradas;
         private System.Windows.Forms.Button btnGuardarImportacion;
         private System.Windows.Forms.Label lblCantidadRecibida;
         private System.Windows.Forms.TextBox txtCantidadRecibida;

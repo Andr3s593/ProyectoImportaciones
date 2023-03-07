@@ -24,6 +24,7 @@ namespace Proyectoimportaciones_v1
             InitializeComponent();
             Obtener();
             CargarCombo();
+            textboxreadonnly();
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -118,6 +119,22 @@ namespace Proyectoimportaciones_v1
             MessageBox.Show("Exportación Exitosa");
 
         }
+
+        private void btnVerNumeroImportacion_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void textboxreadonnly() 
+        {
+            //txtNombreProducto type readonly
+            txtNombreProducto.Text = "Botellas";
+            txtNombreProducto.ReadOnly = true;
+            txtNombreProducto.Enabled = false;
+            //txtCantidad type readonly
+            txtCantidad.Text = "1000";
+            txtCantidad.ReadOnly = true;
+            txtCantidad.Enabled = false;            
+        }       
     }
 }
 
