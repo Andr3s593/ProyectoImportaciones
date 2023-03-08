@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.importacionesEntradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importacionesEntradasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importacionesSalidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuimportacionesEntrada = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuimportaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMovimienES = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnuProveedor = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -39,39 +40,47 @@
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // importacionesEntradasToolStripMenuItem
+            // mnuimportacionesEntrada
             // 
-            this.importacionesEntradasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importacionesEntradasToolStripMenuItem1,
-            this.importacionesSalidasToolStripMenuItem});
-            this.importacionesEntradasToolStripMenuItem.Name = "importacionesEntradasToolStripMenuItem";
-            this.importacionesEntradasToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.importacionesEntradasToolStripMenuItem.Text = "Importaciones";
+            this.mnuimportacionesEntrada.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuimportaciones,
+            this.mnuMovimienES});
+            this.mnuimportacionesEntrada.Name = "mnuimportacionesEntrada";
+            this.mnuimportacionesEntrada.Size = new System.Drawing.Size(95, 20);
+            this.mnuimportacionesEntrada.Text = "Importaciones";
             // 
-            // importacionesEntradasToolStripMenuItem1
+            // mnuimportaciones
             // 
-            this.importacionesEntradasToolStripMenuItem1.Name = "importacionesEntradasToolStripMenuItem1";
-            this.importacionesEntradasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.importacionesEntradasToolStripMenuItem1.Text = "Importaciones";
-            this.importacionesEntradasToolStripMenuItem1.Click += new System.EventHandler(this.mnuImportacionesEntradas_Click);
+            this.mnuimportaciones.Name = "mnuimportaciones";
+            this.mnuimportaciones.Size = new System.Drawing.Size(180, 22);
+            this.mnuimportaciones.Text = "Importaciones";
+            this.mnuimportaciones.Click += new System.EventHandler(this.mnuImportacionesEntradas_Click);
             // 
-            // importacionesSalidasToolStripMenuItem
+            // mnuMovimienES
             // 
-            this.importacionesSalidasToolStripMenuItem.Name = "importacionesSalidasToolStripMenuItem";
-            this.importacionesSalidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.importacionesSalidasToolStripMenuItem.Text = "Movimiento E/S";
-            this.importacionesSalidasToolStripMenuItem.Click += new System.EventHandler(this.mnuImportacionesSalidas_Click);
+            this.mnuMovimienES.Name = "mnuMovimienES";
+            this.mnuMovimienES.Size = new System.Drawing.Size(180, 22);
+            this.mnuMovimienES.Text = "Movimiento E/S";
+            this.mnuMovimienES.Click += new System.EventHandler(this.mnuImportacionesSalidas_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importacionesEntradasToolStripMenuItem,
+            this.mnuimportacionesEntrada,
+            this.mnuProveedor,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuProveedor
+            // 
+            this.mnuProveedor.Name = "mnuProveedor";
+            this.mnuProveedor.Size = new System.Drawing.Size(73, 20);
+            this.mnuProveedor.Text = "Proveedor";
+            this.mnuProveedor.Click += new System.EventHandler(this.mnuProveedor_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -107,7 +116,6 @@
             this.Name = "Importaciones";
             this.Text = "Importaciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Importaciones_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -119,12 +127,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStripMenuItem importacionesEntradasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importacionesEntradasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem importacionesSalidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuimportacionesEntrada;
+        private System.Windows.Forms.ToolStripMenuItem mnuimportaciones;
+        private System.Windows.Forms.ToolStripMenuItem mnuMovimienES;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuProveedor;
     }
 }

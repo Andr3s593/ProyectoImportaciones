@@ -53,3 +53,4 @@ C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\
 C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.pdb
 C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.ImportacionesES.resources
 C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\bin\Release\EPPlus.dll
+C:\Users\pc\Documents\Proyectos_Funciona\Importaciones v2\ProyectoImportaciones\obj\Release\Proyectoimportaciones_v1.ProveedorFunciona.resources

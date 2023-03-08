@@ -25,9 +25,9 @@ namespace Proyectoimportaciones_v1
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<EntradasSalidasImportacion> EntradasSalidasImportacion { get; set; }
         public virtual DbSet<Importacion> Importacion { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<ProveedorImportacion> ProveedorImportacion { get; set; }
-        public virtual DbSet<EntradasSalidasImportacion> EntradasSalidasImportacion { get; set; }
     }
 }

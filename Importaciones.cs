@@ -30,11 +30,13 @@ namespace Proyectoimportaciones_v1
             ImportacionesSalidas importacionessalidas = new ImportacionesSalidas();
             importacionessalidas.MdiParent = this;
             importacionessalidas.Show();
-        }
+        }       
 
-        private void Importaciones_Load(object sender, EventArgs e)
+        private void mnuProveedor_Click(object sender, EventArgs e)
         {
-
+            ProveedorFunciona proovedorfunciona = new ProveedorFunciona();
+            proovedorfunciona.MdiParent = this;
+            proovedorfunciona.Show();
         }
     }
 }

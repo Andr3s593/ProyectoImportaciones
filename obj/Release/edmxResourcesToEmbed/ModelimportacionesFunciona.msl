@@ -1,11 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DBFuncionImportacionesModelStoreContainer" CdmEntityContainer="DBFuncionImportacionesEntities">
+    <EntitySetMapping Name="EntradasSalidasImportacion">
+      <EntityTypeMapping TypeName="DBFuncionImportacionesModel.EntradasSalidasImportacion">
+        <MappingFragment StoreEntitySet="EntradasSalidasImportacion">
+          <ScalarProperty Name="FechaSalidaImportacion" ColumnName="FechaSalidaImportacion" />
+          <ScalarProperty Name="NumeroImportacion" ColumnName="NumeroImportacion" />
+          <ScalarProperty Name="CantidadCompra" ColumnName="CantidadCompra" />
+          <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+          <ScalarProperty Name="CodigoCliente" ColumnName="CodigoCliente" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Importacion">
       <EntityTypeMapping TypeName="DBFuncionImportacionesModel.Importacion">
         <MappingFragment StoreEntitySet="Importacion">
-          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
-          <ScalarProperty Name="ProveedorImportacionId" ColumnName="ProveedorImportacionId" />
           <ScalarProperty Name="CantidadRecibida" ColumnName="CantidadRecibida" />
           <ScalarProperty Name="CantidadImportada" ColumnName="CantidadImportada" />
           <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
@@ -31,21 +42,7 @@
     <EntitySetMapping Name="ProveedorImportacion">
       <EntityTypeMapping TypeName="DBFuncionImportacionesModel.ProveedorImportacion">
         <MappingFragment StoreEntitySet="ProveedorImportacion">
-          <ScalarProperty Name="numeroImportacion" ColumnName="numeroImportacion" />
           <ScalarProperty Name="nombreProveedor" ColumnName="nombreProveedor" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EntradasSalidasImportacion">
-      <EntityTypeMapping TypeName="DBFuncionImportacionesModel.EntradasSalidasImportacion">
-        <MappingFragment StoreEntitySet="EntradasSalidasImportacion">
-          <ScalarProperty Name="FechaSalidaImportacion" ColumnName="FechaSalidaImportacion" />
-          <ScalarProperty Name="NumeroImportacion" ColumnName="NumeroImportacion" />
-          <ScalarProperty Name="CantidadCompra" ColumnName="CantidadCompra" />
-          <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
-          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
-          <ScalarProperty Name="CodigoCliente" ColumnName="CodigoCliente" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

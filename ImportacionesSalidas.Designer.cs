@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtCantidadComprar = new System.Windows.Forms.TextBox();
             this.btnExportar = new System.Windows.Forms.Button();
             this.dgRegistroSalidas = new System.Windows.Forms.DataGridView();
@@ -45,12 +45,14 @@
             this.dtFechaImportacion = new System.Windows.Forms.DateTimePicker();
             this.cmbNumeroImportacion = new System.Windows.Forms.ComboBox();
             this.gbMovimientoES = new System.Windows.Forms.GroupBox();
+            this.lblCantidadalComprar = new System.Windows.Forms.Label();
+            this.txtCantidadalComprar = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblNombreProducto = new System.Windows.Forms.Label();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.btnVerNumeroImportacion = new System.Windows.Forms.Button();
             this.btnExportarExcel = new System.Windows.Forms.Button();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgRegistroSalidas)).BeginInit();
             this.gbMovimientoES.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +63,7 @@
             this.txtCantidadComprar.Name = "txtCantidadComprar";
             this.txtCantidadComprar.Size = new System.Drawing.Size(203, 20);
             this.txtCantidadComprar.TabIndex = 13;
+            this.txtCantidadComprar.TextChanged += new System.EventHandler(this.txtCantidadComprar_TextChanged);
             // 
             // btnExportar
             // 
@@ -72,27 +75,27 @@
             this.btnExportar.TabIndex = 12;
             this.btnExportar.Text = "Guardar";
             this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            this.btnExportar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dgRegistroSalidas
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgRegistroSalidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRegistroSalidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgRegistroSalidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgRegistroSalidas.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgRegistroSalidas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgRegistroSalidas.Location = new System.Drawing.Point(10, 252);
             this.dgRegistroSalidas.Name = "dgRegistroSalidas";
             this.dgRegistroSalidas.ReadOnly = true;
@@ -195,9 +198,12 @@
             this.cmbNumeroImportacion.Name = "cmbNumeroImportacion";
             this.cmbNumeroImportacion.Size = new System.Drawing.Size(121, 21);
             this.cmbNumeroImportacion.TabIndex = 17;
+            this.cmbNumeroImportacion.SelectedIndexChanged += new System.EventHandler(this.cmbNumeroImportacion_SelectedIndexChanged);
             // 
             // gbMovimientoES
             // 
+            this.gbMovimientoES.Controls.Add(this.lblCantidadalComprar);
+            this.gbMovimientoES.Controls.Add(this.txtCantidadalComprar);
             this.gbMovimientoES.Controls.Add(this.txtCantidad);
             this.gbMovimientoES.Controls.Add(this.lblCantidad);
             this.gbMovimientoES.Controls.Add(this.lblNombreProducto);
@@ -225,6 +231,31 @@
             this.gbMovimientoES.TabStop = false;
             this.gbMovimientoES.Text = "Movimiento E/S";
             // 
+            // lblCantidadalComprar
+            // 
+            this.lblCantidadalComprar.AutoSize = true;
+            this.lblCantidadalComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadalComprar.Location = new System.Drawing.Point(472, 158);
+            this.lblCantidadalComprar.Name = "lblCantidadalComprar";
+            this.lblCantidadalComprar.Size = new System.Drawing.Size(154, 20);
+            this.lblCantidadalComprar.TabIndex = 25;
+            this.lblCantidadalComprar.Text = "Cantidad al Comprar";
+            // 
+            // txtCantidadalComprar
+            // 
+            this.txtCantidadalComprar.Location = new System.Drawing.Point(656, 158);
+            this.txtCantidadalComprar.Name = "txtCantidadalComprar";
+            this.txtCantidadalComprar.Size = new System.Drawing.Size(203, 20);
+            this.txtCantidadalComprar.TabIndex = 24;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(796, 27);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 23;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
@@ -247,11 +278,10 @@
             // 
             // txtNombreProducto
             // 
-            this.txtNombreProducto.Location = new System.Drawing.Point(611, 30);
+            this.txtNombreProducto.Location = new System.Drawing.Point(611, 27);
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(100, 20);
             this.txtNombreProducto.TabIndex = 20;
-            
             // 
             // btnVerNumeroImportacion
             // 
@@ -274,13 +304,6 @@
             this.btnExportarExcel.Text = "Exportar a Excel";
             this.btnExportarExcel.UseVisualStyleBackColor = true;
             this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(796, 30);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
-            this.txtCantidad.TabIndex = 23;            
             // 
             // ImportacionesSalidas
             // 
@@ -321,5 +344,7 @@
         private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.Button btnVerNumeroImportacion;
         private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label lblCantidadalComprar;
+        private System.Windows.Forms.TextBox txtCantidadalComprar;
     }
 }

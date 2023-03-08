@@ -14,6 +14,7 @@ using System.Windows.Forms;
 // Importa la clase ImportacionesCRUD
 using Proyectoimportaciones_v1;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.Entity;
 
 namespace Proyectoimportaciones_v1
 {
@@ -23,26 +24,27 @@ namespace Proyectoimportaciones_v1
         {
             InitializeComponent();
             Obtener();
-            CargarCombo();
-            textboxreadonnly();
+            CargarComboBox();
+            resultadotxt();
         }
 
-        private void btnExportar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             EntradasSalidasImportacion salidaImportacion = new EntradasSalidasImportacion();
             salidaImportacion.CodigoCliente = txtCodigoCliente.Text;
             salidaImportacion.NombreCliente = txtNombreCliente.Text;
-            salidaImportacion.NumeroFactura = txtCantidadComprar.Text;
+            salidaImportacion.NumeroFactura = txtNumeroFactura.Text;
             salidaImportacion.CantidadCompra = txtCantidadComprar.Text;
-            salidaImportacion.NumeroImportacion = txtCantidadComprar.Text;
+            salidaImportacion.NumeroImportacion = cmbNumeroImportacion.Text;
             
 
-            ImportacionesCRUD.RegistroImportacionesSalidas(salidaImportacion);
+            ImportacionesCRUD.RegistroEntradaSalidaImportaciones(salidaImportacion);
 
             //this.dgRegistroSalidas.DataSource = consultaImportaciones();
 
             MessageBox.Show("Los datos se guardaron correctamente.");
             Obtener();
+            actualizarCamtidadRestante();
         }
         private void Obtener()
         {
@@ -51,11 +53,11 @@ namespace Proyectoimportaciones_v1
             this.dgRegistroSalidas.DataSource = entradaes;
         }
 
-        private void CargarCombo()
+        private void CargarComboBox()
         {
             DBFuncionImportacionesEntities dbFuncionImportacionesEntities = new DBFuncionImportacionesEntities();
-            var establecimientoGraficos = dbFuncionImportacionesEntities.Importacion.ToList();
-            this.cmbNumeroImportacion.DataSource = establecimientoGraficos;
+            var importaciones = dbFuncionImportacionesEntities.Importacion.ToList();
+            cmbNumeroImportacion.DataSource = importaciones;
             cmbNumeroImportacion.DisplayMember = "NumeroImportacion";
             cmbNumeroImportacion.ValueMember = "id";
         }
@@ -86,7 +88,6 @@ namespace Proyectoimportaciones_v1
                 }
             }
 
-
             //exportar a excel
             string folderPath = "C:\\REPORTES\\"; //directorio de exportación
             if (!Directory.Exists(folderPath))
@@ -94,10 +95,7 @@ namespace Proyectoimportaciones_v1
                 Directory.CreateDirectory(folderPath);
             }
 
-
             var nombre = this.Name + DateTime.Now.ToString("ddMMyyyy") + ".xlsx";
-
-
 
             var pathGeneral = folderPath + DateTime.Now.ToString("ddMMyyyy") + "-" + DateTime.Now.ToShortTimeString().Replace(":", "") + "-" + nombre;
             FileInfo file = new FileInfo(pathGeneral);
@@ -116,25 +114,72 @@ namespace Proyectoimportaciones_v1
                 excelPackage.Save();
             }
 
-            MessageBox.Show("Exportación Exitosa");
+            MessageBox.Show("Exportación Exitosa");            
 
         }
-
+        private void resultadotxt() 
+        { 
+            txtCantidadalComprar.ReadOnly = true;      
+            txtCantidadalComprar.Enabled= false;
+        }
         private void btnVerNumeroImportacion_Click(object sender, EventArgs e)
         {
-
+            ObtenerDatosImportacionSeleccionada();
         }
-        private void textboxreadonnly() 
+        private void cmbNumeroImportacion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //txtNombreProducto type readonly
-            txtNombreProducto.Text = "Botellas";
-            txtNombreProducto.ReadOnly = true;
-            txtNombreProducto.Enabled = false;
-            //txtCantidad type readonly
-            txtCantidad.Text = "1000";
-            txtCantidad.ReadOnly = true;
-            txtCantidad.Enabled = false;            
-        }       
+            ObtenerDatosImportacionSeleccionada();
+        }
+        private void ObtenerDatosImportacionSeleccionada()
+        {
+            DBFuncionImportacionesEntities dbFuncionImportacionesEntities = new DBFuncionImportacionesEntities();
+            // Obtener el id de la importación seleccionada en el ComboBox
+            int idSeleccionado = (int)cmbNumeroImportacion.SelectedValue;
+            // Buscar la importación correspondiente al id seleccionado
+            var importacion = dbFuncionImportacionesEntities.Importacion.Where(x => x.id == idSeleccionado).FirstOrDefault();
+            // Asignar los valores correspondientes a los cuadros de texto
+            if (importacion != null)
+            {
+                txtNombreProducto.Text = importacion.NombreProducto;
+                txtNombreProducto.ReadOnly = true;                
+                txtCantidad.Text = importacion.CantidadImportada.ToString();
+                txtCantidad.ReadOnly = true;                
+            }
+        }
+        private void actualizarCamtidadRestante() 
+        {
+            DBFuncionImportacionesEntities dbFuncionImportacionesEntities = new DBFuncionImportacionesEntities();
+            int idSeleccionado = (int)cmbNumeroImportacion.SelectedValue; // Obtener el valor seleccionado en el ComboBox
+            var importaciones = dbFuncionImportacionesEntities.Importacion.Where(x => x.id == idSeleccionado).FirstOrDefault(); 
+            importaciones.CantidadImportada = decimal.Parse(txtCantidadalComprar.Text);
+
+            dbFuncionImportacionesEntities.Importacion.Attach(importaciones);
+            dbFuncionImportacionesEntities.Entry(importaciones).State = EntityState.Modified;
+            dbFuncionImportacionesEntities.SaveChanges();
+            MessageBox.Show("Se Actualizó la Cantidad Importada Exitosamente");
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            CalcularResta();
+        }
+
+        private void txtCantidadComprar_TextChanged(object sender, EventArgs e)
+        {
+            CalcularResta();
+        }
+        private void CalcularResta()
+        {
+            if (double.TryParse(txtCantidad.Text, out double numero1) && double.TryParse(txtCantidadComprar.Text, out double numero2))
+            {
+                double resultado = numero1 - numero2;
+                txtCantidadalComprar.Text = resultado.ToString();
+            }
+            else
+            {
+                txtCantidadalComprar.Text = "";
+            }
+        }        
     }
 }
 

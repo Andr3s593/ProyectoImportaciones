@@ -1,19 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DBFuncionImportacionesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DBFuncionImportacionesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EntradasSalidasImportacion" EntityType="DBFuncionImportacionesModel.EntradasSalidasImportacion" />
     <EntitySet Name="Importacion" EntityType="DBFuncionImportacionesModel.Importacion" />
     <EntitySet Name="Producto" EntityType="DBFuncionImportacionesModel.Producto" />
     <EntitySet Name="ProveedorImportacion" EntityType="DBFuncionImportacionesModel.ProveedorImportacion" />
-    <AssociationSet Name="FK_EntradaImportacion_Producto" Association="DBFuncionImportacionesModel.FK_EntradaImportacion_Producto">
-      <End Role="Producto" EntitySet="Producto" />
-      <End Role="Importacion" EntitySet="Importacion" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EntradaImportacion_ProveedorImportacion" Association="DBFuncionImportacionesModel.FK_EntradaImportacion_ProveedorImportacion">
-      <End Role="ProveedorImportacion" EntitySet="ProveedorImportacion" />
-      <End Role="Importacion" EntitySet="Importacion" />
-    </AssociationSet>
-    <EntitySet Name="EntradasSalidasImportacion" EntityType="DBFuncionImportacionesModel.EntradasSalidasImportacion" />
   </EntityContainer>
+  <EntityType Name="EntradasSalidasImportacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoCliente" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NombreCliente" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroFactura" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CantidadCompra" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroImportacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FechaSalidaImportacion" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
   <EntityType Name="Importacion">
     <Key>
       <PropertyRef Name="id" />
@@ -27,10 +31,6 @@
     <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="CantidadImportada" Type="Decimal" Precision="38" Scale="0" />
     <Property Name="CantidadRecibida" Type="Decimal" Precision="38" Scale="0" />
-    <Property Name="ProveedorImportacionId" Type="Int32" />
-    <Property Name="ProductoId" Type="Int32" />
-    <NavigationProperty Name="Producto" Relationship="DBFuncionImportacionesModel.FK_EntradaImportacion_Producto" FromRole="Importacion" ToRole="Producto" />
-    <NavigationProperty Name="ProveedorImportacion" Relationship="DBFuncionImportacionesModel.FK_EntradaImportacion_ProveedorImportacion" FromRole="Importacion" ToRole="ProveedorImportacion" />
   </EntityType>
   <EntityType Name="Producto">
     <Key>
@@ -40,51 +40,12 @@
     <Property Name="nombreProducto" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
     <Property Name="cantidad" Type="Double" />
     <Property Name="lote" Type="Double" />
-    <NavigationProperty Name="Importacion" Relationship="DBFuncionImportacionesModel.FK_EntradaImportacion_Producto" FromRole="Producto" ToRole="Importacion" />
   </EntityType>
   <EntityType Name="ProveedorImportacion">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="nombreProveedor" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-    <Property Name="numeroImportacion" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="Importacion" Relationship="DBFuncionImportacionesModel.FK_EntradaImportacion_ProveedorImportacion" FromRole="ProveedorImportacion" ToRole="Importacion" />
-  </EntityType>
-  <Association Name="FK_EntradaImportacion_Producto">
-    <End Type="DBFuncionImportacionesModel.Producto" Role="Producto" Multiplicity="0..1" />
-    <End Type="DBFuncionImportacionesModel.Importacion" Role="Importacion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Producto">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Importacion">
-        <PropertyRef Name="ProductoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EntradaImportacion_ProveedorImportacion">
-    <End Type="DBFuncionImportacionesModel.ProveedorImportacion" Role="ProveedorImportacion" Multiplicity="0..1" />
-    <End Type="DBFuncionImportacionesModel.Importacion" Role="Importacion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProveedorImportacion">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Importacion">
-        <PropertyRef Name="ProveedorImportacionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="EntradasSalidasImportacion">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CodigoCliente" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="NombreCliente" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="NumeroFactura" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="CantidadCompra" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="NumeroImportacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="FechaSalidaImportacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="nombreProveedor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

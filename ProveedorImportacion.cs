@@ -14,17 +14,7 @@ namespace Proyectoimportaciones_v1
     
     public partial class ProveedorImportacion
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProveedorImportacion()
-        {
-            this.Importacion = new HashSet<Importacion>();
-        }
-    
         public int id { get; set; }
         public string nombreProveedor { get; set; }
-        public string numeroImportacion { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Importacion> Importacion { get; set; }
     }
 }

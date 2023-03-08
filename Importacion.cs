@@ -23,10 +23,5 @@ namespace Proyectoimportaciones_v1
         public string Proveedor { get; set; }
         public Nullable<decimal> CantidadImportada { get; set; }
         public Nullable<decimal> CantidadRecibida { get; set; }
-        public Nullable<int> ProveedorImportacionId { get; set; }
-        public Nullable<int> ProductoId { get; set; }
-    
-        public virtual Producto Producto { get; set; }
-        public virtual ProveedorImportacion ProveedorImportacion { get; set; }
     }
 }

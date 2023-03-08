@@ -18,6 +18,15 @@ namespace Proyectoimportaciones_v1
         {
             InitializeComponent();
             Obtener();
+            CargarComboBox();
+        }
+        private void CargarComboBox()
+        {
+            DBFuncionImportacionesEntities dbFuncionImportacionesEntities = new DBFuncionImportacionesEntities();
+            var importaciones = dbFuncionImportacionesEntities.ProveedorImportacion.ToList();
+            cmbProveedor.DataSource = importaciones;
+            cmbProveedor.DisplayMember = "nombreProveedor";
+            cmbProveedor.ValueMember = "id";
         }
         private void btnExportarImportacionesEntradas_Click(object sender, EventArgs e)
         {
@@ -50,7 +59,7 @@ namespace Proyectoimportaciones_v1
             }
 
             // Llama a la función RegistroImportacionesEntradas de la clase ImportacionesCRUD para guardar los datos en la BD
-            ImportacionesCRUD.RegistroImportacionesEntradas(entradaImportacion);
+            ImportacionesCRUD.RegistroImportaciones(entradaImportacion);
 
             // Muestra un mensaje de éxito
             MessageBox.Show("Los datos se han guardado correctamente.");

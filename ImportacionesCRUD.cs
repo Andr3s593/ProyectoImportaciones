@@ -9,7 +9,7 @@ namespace Proyectoimportaciones_v1
 {
     public class ImportacionesCRUD
     {
-        public static void RegistroImportacionesEntradas(Importacion imprtEntr)
+        public static void RegistroImportaciones(Importacion imprtEntr)
         {
             DBFuncionImportacionesEntities dbfuncionaimportacionesEntities = new DBFuncionImportacionesEntities();
             Importacion entradaImportacion = new Importacion();            
@@ -28,7 +28,7 @@ namespace Proyectoimportaciones_v1
 
         }
 
-        public static void RegistroImportacionesSalidas(EntradasSalidasImportacion imprtEntr)
+        public static void RegistroEntradaSalidaImportaciones(EntradasSalidasImportacion imprtEntr)
         {
             DBFuncionImportacionesEntities dbfuncionaimportacionesEntities = new DBFuncionImportacionesEntities();
             EntradasSalidasImportacion salidaImportacion = new EntradasSalidasImportacion();
@@ -43,6 +43,16 @@ namespace Proyectoimportaciones_v1
             dbfuncionaimportacionesEntities.EntradasSalidasImportacion.Add(salidaImportacion);
             dbfuncionaimportacionesEntities.Entry(salidaImportacion).State = EntityState.Added;
             dbfuncionaimportacionesEntities.SaveChanges();
+        }
+        public static void RegistroProveedor(ProveedorImportacion proimpr) 
+        { 
+            DBFuncionImportacionesEntities dbfuncionimportacionesEntities = new DBFuncionImportacionesEntities();
+            ProveedorImportacion proveedorImportacion = new ProveedorImportacion();
+            proveedorImportacion.nombreProveedor = proimpr.nombreProveedor;
+
+            dbfuncionimportacionesEntities.ProveedorImportacion.Add(proveedorImportacion);
+            dbfuncionimportacionesEntities.Entry(proveedorImportacion).State = EntityState.Added;
+            dbfuncionimportacionesEntities.SaveChanges();
         }
     }
 }

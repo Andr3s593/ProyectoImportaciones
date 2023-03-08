@@ -25,8 +25,6 @@
     <Property Name="Proveedor" Type="varchar" MaxLength="100" />
     <Property Name="CantidadImportada" Type="numeric" Precision="38" Scale="0" />
     <Property Name="CantidadRecibida" Type="numeric" Precision="38" Scale="0" />
-    <Property Name="ProveedorImportacionId" Type="int" />
-    <Property Name="ProductoId" Type="int" />
   </EntityType>
   <EntityType Name="Producto">
     <Key>
@@ -41,46 +39,13 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="nombreProveedor" Type="nchar" MaxLength="30" />
-    <Property Name="numeroImportacion" Type="nchar" MaxLength="30" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreProveedor" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <Association Name="FK_EntradaImportacion_Producto">
-    <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
-    <End Role="Importacion" Type="Self.Importacion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Producto">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Importacion">
-        <PropertyRef Name="ProductoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EntradaImportacion_ProveedorImportacion">
-    <End Role="ProveedorImportacion" Type="Self.ProveedorImportacion" Multiplicity="0..1" />
-    <End Role="Importacion" Type="Self.Importacion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProveedorImportacion">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Importacion">
-        <PropertyRef Name="ProveedorImportacionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="DBFuncionImportacionesModelStoreContainer">
     <EntitySet Name="EntradasSalidasImportacion" EntityType="Self.EntradasSalidasImportacion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Importacion" EntityType="Self.Importacion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProveedorImportacion" EntityType="Self.ProveedorImportacion" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_EntradaImportacion_Producto" Association="Self.FK_EntradaImportacion_Producto">
-      <End Role="Producto" EntitySet="Producto" />
-      <End Role="Importacion" EntitySet="Importacion" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EntradaImportacion_ProveedorImportacion" Association="Self.FK_EntradaImportacion_ProveedorImportacion">
-      <End Role="ProveedorImportacion" EntitySet="ProveedorImportacion" />
-      <End Role="Importacion" EntitySet="Importacion" />
-    </AssociationSet>
   </EntityContainer>
 </Schema>
